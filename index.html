@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 
-<!-- This is a comment tag -->
-
 <html>
 
 <head>
@@ -9,18 +7,22 @@
 	<title>Jacob_Tallio_Esquire</title>
 	<link rel="stylesheet" href="style.css">
 
-
 </head>
 
 <body>
 	<header>
-
-		<!-- My Headers, i wanted them both to have different sizes -->
-		<h1>It's tallzie</h1>
-			<h2>aka Jacob & and welcome to my portfolio</h2>
-
-
-	</header>
+        <img src="jacob.jpg" alt="Description of your image">
+        
+        <div class="header-content">
+            <h1>It's tallzie</h1>
+            <h2>
+				aka Jacob & and welcome to my portfolio
+				<br>
+				<br>
+				of doom . . .
+			</h2>
+        </div>
+    </header>
 
 	<main>
 
@@ -28,7 +30,7 @@
 		<nav class="navbar"> 
 			<ul>
 				<li><a href="index.html">Home</a></li>
-				<li><a href="#aboutme">My Bio</a></li>
+				<li><a href="#aboutme">About Me</a></li>
 				<li><a href="#extras">extras</a></li>
 				<li><a href="#extrass">extrass</a></li>
 			</ul>
@@ -37,14 +39,29 @@
 		<br>
 		
 		<!-- paragraph that is grabbing the text parameters from my "box" class -->
-		<h2 id="aboutme">About Me</h2>
-		<p class="box">
-			Self-motivated and adaptable programmer with a background in customer service and team leadership.
-			Eager to apply strong problem-solving skills and a passion for technology to develop innovative solutions.
-			Seeking to leverage a comprehensive understanding of programming principles gained from Vancouver Film School
-			to contribute to dynamic projects.
-
-		</p>
+		<h2 id="aboutme"></h2>
+		<div class="about-me-boxes-container">
+            <div class="box">
+				<h3>About Me</h3>
+                <p>
+                    Self-motivated and adaptable programmer with a background in customer service and team leadership.
+                    Eager to apply strong problem-solving skills and a passion for technology to develop innovative solutions.
+                    Seeking to leverage a comprehensive understanding of programming principles gained from Vancouver Film School
+                    to contribute to dynamic projects.
+                </p>
+            </div>
+			
+            <div class="box skills-box">
+                <h3>My Skills</h3>
+				<br>
+                <div class="badges-container">
+                    <span class="skill-badge">HTML</span>
+                    <span class="skill-badge">JavaScript</span>
+                    <span class="skill-badge">C#</span>
+                    <span class="skill-badge">C++</span>
+                </div>
+            </div>
+        </div>
 
         <!-- paragraph that is grabbing the text parameters from my "box" class -->
 		<h2 id="extras">Extras</h2>
@@ -82,6 +99,5 @@
 	</footer>
 
 </body>
-
 
 </html>
