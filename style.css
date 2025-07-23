@@ -1,159 +1,120 @@
-/* Added a special font, named it and linked it here for my pages to use */
 @font-face {
     font-family: "8bit";
-    src: url("PressStart2P-Regular.ttf"); /* Added quotes around the URL */
+    src: url("PressStart2P-Regular.ttf");
 }
 
-/* general parameters for the majority of the webpage */
 body {
     background-color: black;
-    font-family: "8bit", cursive; /* Added a fallback font (cursive is a good general choice for pixel fonts) */
+    font-family: "8bit", cursive;
     font-weight: 400;
-    font-size: 16px; /* Reduced base font size for better readability and scaling.
-                        You can increase this if your "8bit" font is tiny.
-                        Use 'rem' or 'em' for elements that should scale with this. */
+    font-size: 16px;
     color: lawngreen;
-    padding: 0; /* Remove default body padding/margin to prevent extra space */
+    padding: 0;
     margin: 0;
-    /* justify-content and align-items are for flex/grid containers, not directly on body for general centering.
-       If you want to center content, use margin: 0 auto; on a wrapper div, or flexbox on body if it's the main container. */
 }
 
-/* Container for main content to apply general centering if desired */
 .content-wrapper {
-    max-width: 1200px; /* Limit content width for better readability on large screens */
-    margin: 0 auto; /* Center the content wrapper */
-    padding: 16px; /* Add padding inside the wrapper */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px;
 }
 
 header {
-    text-align: center; /* Center your h1 and h2 */
-    padding: 20px 0; /* Add some padding around your header content */
-    background-color: black; /* Ensure header has a background if not fully covered by body background */
+    text-align: center;
+    padding: 20px 0;
+    background-color: black;
 }
 
-/* I wanted the second line in my header to have a different size that the rest, so i just added it here */
 h1 {
-    font-size: 48px; /* Assuming this is your main title size */
-    margin-bottom: 8px; /* Space between h1 and h2 */
-    line-height: 1.2; /* Adjust line height for better spacing */
+    font-size: 48px;
+    margin-bottom: 8px;
+    line-height: 1.2;
 }
 
 h2 {
     font-size: 32px;
-    padding: 0; /* Remove padding if not needed, use margin instead for spacing */
-    margin: 0 auto 16px auto; /* Center h2 horizontally, add margin below */
-    /* justify-content and align-items are for flex/grid containers */
+    padding: 0;
+    margin: 0 auto 16px auto;
 }
 
-/* Sticky Navbar Styles */
 .navbar {
-    position: sticky; /* The magic property for a sticky nav */
-    top: 0;          /* Stick to the top of the viewport */
-    width: 100%;     /* Ensure it spans the full width */
-    background-color: lawngreen; /* Background color for the sticky nav */
-    z-index: 1000;   /* Make sure it stays on top of other content when sticky */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); /* Optional: Adds a subtle shadow for visual separation */
-    /* Removed padding/margin from here as they are on the ul */
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: lawngreen;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
 
-/* remove bullets, set some adjustable parameters just in case and (my understanding of the overflow is that when i switch the list to move horizontal, im hiding it from moving diagonally so it can move horizontal) */
-/* in short im not sure how the overflow is working here, but this is how I found to make a horizontal nav bar, I imagine there are better ways, but this works */
 .navbar ul {
     list-style-type: none;
     padding: 0px;
     margin: 0px;
-    /* background-color: lawngreen; Removed, as it's on .navbar now for the sticky effect */
-    display: flex; /* Modern way to make horizontal nav items */
-    justify-content: center; /* Centers the navigation links */
-    /* overflow: hidden; explanation below */
-    /* You don't usually need overflow: hidden here with display: flex unless
-       you have specific reasons like clearing floats (which we're replacing). */
+    display: flex;
+    justify-content: center;
 }
 
-/* changing the parameters of my 'link' text, */
 .navbar a {
     color: black;
     text-decoration: none;
     padding: 16px;
-    /* margin: 4px; Removed margin here, use gap on flex container or margin on li */
-    display: block; /* Make the whole padding area clickable */
+    display: block;
     text-align: center;
 }
 
-/* giving a function to my navbar to change colors to change while the cursor is hovering over top */
 .navbar a:hover {
     background-color: black;
     color: lawngreen;
 }
 
-/* changing the bar to horizontal, not sure why this works, looking forward to discovering other ways */
 .navbar li {
-    /* float: left; Replaced by display: flex on .navbar ul */
-    /* If you still use float: left, remember to clear floats on the parent or next element. */
-    /* With display: flex on the ul, you can use margin for spacing */
-    margin: 0 8px; /* Adds space between list items */
+    margin: 0 8px;
 }
 
-/* changing the value of the space between letters in paragraphs */
 p {
     line-height: 1.6;
-    margin-bottom: 1em; /* Add some space below paragraphs */
+    margin-bottom: 1em;
 }
 
-
-/* creating a box to go around my text */
 .box {
     border: 8px solid lawngreen;
     padding: 16px;
-    margin: 32px; /* This margin will apply outside the box */
+    margin: 32px;
     text-align: center;
-    word-wrap: break-word; /* Helps with long words in pixel fonts */
+    word-wrap: break-word;
 }
 
-/* setting parameters for my images */
 img {
-    max-width: 100%; /* Make image responsive */
-    height: auto; /* Maintain aspect ratio */
-    padding: 4%; /* Padding inside the image's border box */
-    display: block; /* Removes extra space below inline images */
-    margin: 0 auto; /* Center the image */
-    border-radius: 50%; /* This will make it circular if width and height are equal */
-    /* Removed fixed width and height for responsiveness */
-    /* width: 800px; */
-    /* height: 800px; */
+    max-width: 100%;
+    height: auto;
+    padding: 4%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
 }
 
-/* enabling flex functions and setting up the webpage to be viewed in vertically top to bottom */
 .container {
     display: flex;
     flex-direction: column;
-    /* Add any other container styles like padding or gap here */
-    gap: 20px; /* Space between flex items */
+    gap: 20px;
 }
 
-/* parameters for my footer */
 footer {
-    border: 0px; /* No need to explicitly set border: 0px if you don't want a border */
     background-color: lawngreen;
     color: black;
     display: flex;
-    justify-content: flex-end; /* Use flex-end for content to be at the end of the main axis */
+    justify-content: flex-end;
     padding: 16px;
-    margin-top: 32px; /* Add margin above the footer to separate it from content */
-    /* Removed margin: 16px; from here as it creates space around the footer.
-       Use margin-top to separate from content. */
+    margin-top: 32px;
 }
 
-/* setting up a blink function for text */
 #blink_text {
     animation-name: blink;
     animation-duration: 2s;
     animation-timing-function: ease-in;
-    animation-iteration-count: infinite; /* Changed to 'infinite' for continuous blinking */
+    animation-iteration-count: infinite;
 }
 
-/* changes the color of the blinking effect */
 @keyframes blink {
     0% {
         color: red;
