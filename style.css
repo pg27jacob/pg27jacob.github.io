@@ -1,6 +1,6 @@
 @font-face {
     font-family: "8bit";
-    src: url("PressStart2P-Regular.ttf");
+    src: url("assets/fonts/PressStart2P-Regular.ttf");
 }
 
 body {
@@ -17,7 +17,7 @@ body {
 .fullscreen-div {
     width: 100vw;
     height: 100vh;
-    background-image: url(background.gif);
+    background-image: url(assets/images/background.gif);
     
     position: relative;
     display: flex;
@@ -172,7 +172,6 @@ h2 {
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
-
 
 p {
     line-height: 1.6;
