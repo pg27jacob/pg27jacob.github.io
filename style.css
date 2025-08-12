@@ -23,14 +23,18 @@ body {
     margin: 0;
 }
 
+img.svg-icon {
+    fill: var(--text-colour);
+}
+
 /* Full-screen intro section */
 .fullscreen-div {
     width: 100vw;
     height: 100vh;
-    
+
     background-image: url(assets/images/portfolio_one.gif);
     background-size: cover;
-    
+
     position: relative;
     display: flex;
     justify-content: center;
@@ -45,7 +49,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(var(--background-colour));
+    background-color: var(--background-colour);
     z-index: 1;
     object-fit: fill;
 }
@@ -56,7 +60,7 @@ body {
     animation-timing-function: ease-in;
     animation-fill-mode: forwards;
     animation-delay: .7s;
-    
+
     max-width: 200px;
     width: 100%;
     height: auto;
@@ -67,8 +71,8 @@ body {
     box-sizing: border-box;
     margin-bottom: 20px;
     margin-top: -50px;
-    position: relative; 
-    z-index: 2; 
+    position: relative;
+    z-index: 2;
 }
 
 .tallzie-title {
@@ -77,12 +81,12 @@ body {
     animation-timing-function: ease-in;
     animation-fill-mode: forwards;
     animation-delay: .7s;
-    
+
     font-size: 3em;
     color: var(--text-colour);
     text-shadow: 0 0 5px var(--highlight-colour);
-    
-    position: relative; 
+
+    position: relative;
     z-index: 2;
 }
 
@@ -102,17 +106,17 @@ body {
 }
 
 .icon-title {
-    animation: 
-        initial-blink 4s ease-in 0.7s forwards, /* Fade in animation */
-        blink 2s infinite; /* Blinking animation */
+    animation:
+            initial-blink 4s ease-in 0.7s forwards, /* Fade in animation */
+            blink 2s infinite; /* Blinking animation */
 
     font-size: 2em;
     color: var(--text-colour);
     text-shadow: 0 0 5px var(--highlight-colour);
-    position: absolute; 
-    bottom: 20px; 
-    left: 50%; 
-    transform: translateX(-50%); 
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 2;
 }
 
@@ -122,35 +126,44 @@ body {
     padding: 16px;
 }
 
-.navbar ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-}
-
-.navbar a {
-    color: var(--text-colour);
-    text-decoration: none;
-    padding: 16px;
-    display: block;
-    text-align: center;
-}
-
-.navbar a:hover {
-    background-color: var(--primary-colour);
-    color: var(--accent-colour);
-}
-
-.navbar li {
-    margin: 0px;
-}
-
 .navbar {
     position: sticky;
     top: 0;
     width: 100%;
     background-color: var(--secondary-colour);
     z-index: 1000;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.navbar li {
+    margin: 0;
+    flex-grow: 1;
+    /* Remove the text-align from here, as we'll handle it on the <a> tag */
+}
+
+.navbar a {
+    color: var(--text-colour);
+    text-decoration: none;
+    /* Use flexbox on the anchor tag to center the content */
+    display: flex;
+    justify-content: center; /* Horizontally center the content (the text and image) */
+    align-items: center; /* Vertically center the content */
+    padding: 16px;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.navbar a:hover {
+    background-color: var(--primary-colour);
+    color: var(--accent-colour);
 }
 
 header {
@@ -256,6 +269,19 @@ p {
     flex-direction: column;
     gap: 20px;
 }
+
+.projects-container .box:nth-child(1) {
+    background-image: url("assets/images/sweetspot_background2.png");
+    background-size: inherit;
+    background-position: center;
+}
+
+.projects-container .box:nth-child(2) {
+    background-image: url("assets/images/deified_background.png");
+    background-size: cover;
+    background-position: center;
+}
+
 
 footer {
     background-color: var(--secondary-colour);
